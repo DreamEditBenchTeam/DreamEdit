@@ -1,8 +1,3 @@
-"""
-Code adapted from
-https://github.com/Xiang-cd/DiffEdit--diffusion/blob/main/diffedit.ipynb
-"""
-
 import warnings
 
 warnings.filterwarnings("ignore")
