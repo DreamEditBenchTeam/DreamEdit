@@ -5,12 +5,20 @@ Replace the subject in a given image to a customized one or add your customized 
 
 ![image](https://github.com/DreamEditBenchTeam/DreamEdit/assets/34955859/b66e3809-967d-46d5-a3ba-87879550106b)
 
-Models, code, and dataset for [DreamEdit](https://arxiv.org/abs/2306.12624).
+Models, code, and dataset for [DreamEdit: Subject-driven Image Editing](https://arxiv.org/abs/2306.12624).
 
 Check [project website](https://dreameditbenchteam.github.io/) for demos and data examples.
 
 
-## Citation Information
+## Requirements
+A suitable conda environment named `dream_edit` can be created and activated with:
+```shell
+conda env create -f environment.yaml
+conda activate dream_edit
+```
+
+
+## BibTeX
 
 If you find this paper or repo useful for your research, please consider citing our paper:
 ```
