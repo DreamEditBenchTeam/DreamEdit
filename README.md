@@ -17,6 +17,13 @@ conda env create -f environment.yaml
 conda activate dream_edit
 ```
 
+## Huggingface Dataset
+Our dataset is on Huggingface now: https://huggingface.co/datasets/tianleliphoebe/DreamEditBench
+```python
+from datasets import load_dataset
+dataset = load_dataset("tianleliphoebe/DreamEditBench")
+```
+
 
 ## BibTeX
 
