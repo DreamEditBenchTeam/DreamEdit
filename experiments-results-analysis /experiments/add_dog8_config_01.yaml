@@ -1,0 +1,82 @@
+# Purpose:
+#     Validate whether higher scale is the reason for the background noise issue
+# Conclusion:
+#     No
+
+base_path: "${oc.env:HOME}"
+experiment_name: "add_dog8"
+
+class_obj_name: "dog"
+class_folder_name: "dog8"
+benchmark_folder_name: "dog" # for our labeling
+token_of_class: "wie"
+ckpt_base_folder: "dog82023-04-17T00-58-03_dog8_april/"
+dream_edit_prompt: "a grey and white border collie dog"
+
+config_name: "add_${class_folder_name}_config_01"
+experiment_result_path: "/home/data/dream_edit_project/results/${experiment_name}/${config_name}/"
+
+data:
+    src_img_data_folder_path: "/home/data/dream_edit_project/benchmark/background_images_refine/"
+    class_name: "${class_obj_name}"
+    bbox_file_name: "bbox.json"
+    src_img_file_name: "found0.jpg"
+
+    db_dataset_path: "/home/data/dream_edit_project/benchmark/cvpr_dataset/"
+    db_folder_name: "${class_folder_name}"
+    obj_img_file_name: "00.jpg"
+
+model:
+    gligen: # GLIGEN: Open-Set Grounded Text-to-Image Generation
+        gligen_scheduled_sampling_beta: 1 # TODO: What is this?
+        num_inference_steps: 100
+
+    lang_sam: # Segment Anything
+        segment_confidence: 0.1 # segmentation confidence in segment-anything
+
+    sd: # Stable Diffusion
+        conf_path: "configs/stable-diffusion/v1-inference.yaml"
+        ckpt_prefix: "/home/data/dream_edit_project/model_weights/"
+        ckpt: "${ckpt_base_folder}"
+        ckpt_suffix: "checkpoints/last.ckpt"
+        ckpt_path: "${model.sd.ckpt_prefix}${model.sd.ckpt}${model.sd.ckpt_suffix}"
+
+    de: # DreamEdit
+        task_type: "add"
+        special_token: "${token_of_class}"
+        bounding_box: "bbox.json"
+        inpaint_after_last_iteration: False # whether to inpaint after the last iteration
+        postprocessing_type: "sd_inpaint"
+        use_diffedit: False # baseline of diffedit
+
+        addition_config:
+            use_copy_paste: False
+            inpaint_type: "gligen"
+            automate_prompt: False # whether to generate prompt from BLIP image caption model
+            inpaint_prompt: "photo of ${dream_edit_prompt}"
+            inpaint_phrase: "${dream_edit_prompt}"
+
+        mask_config:
+            mask_dilate_kernel: 20
+            mask_type: "dilation"
+            use_bbox_mask_for_first_iteration: True # whether to use bbox as the mask for the first iteration
+            use_bbox_mask_for_all_iterations: False # whether to use bbox as the mask for all iterations
+
+        ddim:
+            seed: 42  # the seed (for reproducible sampling)
+            scale: 5.5
+            ddim_steps: 40
+            noise_step: 0
+            iteration_number: 7
+            encode_ratio_schedule:
+                decay_type: "manual"  # "linear" or "exponential" or "constant" or "manual"
+                start_ratio: 0.8
+                end_ratio: 0.3
+                manual_ratio_list: [0.5, 0.4, 0.4, 0.4, 0.3, 0.3, 0.3]  # only used when decay_type is "manual"
+
+        background_correction_enabled: True # set to false when doing diffedit baseline
+        background_correction:
+            iteration_number: 7  # how many iterations to correct the background
+            use_latents_record: False # reuse the latents from the first iteration
+            use_background_from_original_image: True
+            use_obj_mask_from_first_iteration: False  # whether we always use the object mask from the first iteration
