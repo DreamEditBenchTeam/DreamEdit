@@ -24,6 +24,20 @@ from datasets import load_dataset
 dataset = load_dataset("tianleliphoebe/DreamEditBench")
 ```
 
+## How to run
+Go to `experiment-results-analysis` folder:
+```
+cd experiment-results-analysis/experiments
+```
+
+Run the script:
+```
+sh replace_dog8_config_01.sh
+```
+You can change the input path for data, model, and other parameter setting in the corresponding config file (e.g. replace_dog8_config_01.yaml)
+An example fine-tuned dreambooth model checkpoint for dog8 can be downloaded at [here](https://drive.google.com/file/d/1aSyA6CsCchYC1l9DxJiy0CrJsht0K0sj/view?usp=sharing).
+
+
 
 ## BibTeX
 
