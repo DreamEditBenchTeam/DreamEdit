@@ -12,10 +12,24 @@ Check [project website](https://dreameditbenchteam.github.io/) for demos and dat
 
 ## Requirements
 A suitable conda environment named `dream_edit` can be created and activated with:
+
 ```shell
 conda env create -f environment.yaml
 conda activate dream_edit
+
+# To update env
+conda env update dream_edit --file environment.yml  --prune
 ```
+> ^There is some problem with the environment file setup currently, we will fix it soon.
+
+> For now to get the code able to run:
+> Our repo requires dependencies from different repos. Please follow the official installation of:
+> * [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO)
+> * [LangSAM](https://github.com/luca-medeiros/lang-segment-anything/tree/main)
+> * [Stable Diffusion](https://github.com/CompVis/stable-diffusion)
+> * [GlideGen's fork of diffuser](https://github.com/gligen/diffusers)
+
+
 
 ## Huggingface Dataset
 Our dataset is on Huggingface now: https://huggingface.co/datasets/tianleliphoebe/DreamEditBench
