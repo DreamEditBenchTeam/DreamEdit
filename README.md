@@ -27,7 +27,7 @@ conda env update dream_edit --file environment.yml  --prune
 > * [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO)
 > * [LangSAM](https://github.com/luca-medeiros/lang-segment-anything/tree/main)
 > * [Stable Diffusion](https://github.com/CompVis/stable-diffusion)
-> * [GlideGen's fork of diffuser](https://github.com/gligen/diffusers)
+> * [Gligen's fork of diffuser](https://github.com/gligen/diffusers)
 
 
 
