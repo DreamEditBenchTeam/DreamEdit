@@ -14,7 +14,7 @@ Check [project website](https://dreameditbenchteam.github.io/) for demos and dat
 A suitable conda environment named `dream_edit` can be created and activated with:
 
 ```shell
-conda env create -f environment.yaml
+conda env create -f environment.yml
 conda activate dream_edit
 
 # To update env
