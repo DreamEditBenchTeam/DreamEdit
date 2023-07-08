@@ -29,6 +29,35 @@ conda env update dream_edit --file environment.yml  --prune
 > * [Stable Diffusion](https://github.com/CompVis/stable-diffusion)
 > * [Gligen's fork of diffuser](https://github.com/gligen/diffusers)
 
+For example, besides the auto install environment, we also install dependencies with:
+```pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
+cd ..
+
+# Install SAM
+pip install git+https://github.com/luca-medeiros/lang-segment-anything.git (already included in the yml file)
+git clone https://github.com/IDEA-Research/Grounded-Segment-Anything.git
+
+# To enable gpu in grounding dino:
+conda install -c conda-forge cudatoolkit-dev -y
+export BUILD_WITH_CUDA=True
+export CUDA_HOME=$CONDA_PREFIX
+export AM_I_DOCKER=False
+
+# This might be optional:
+cd ~/dreamedit_env_dependency/Grounded-Segment-Anything/
+python -m pip install -e segment_anything
+python -m pip install -e GroundingDINO
+git submodule update --init --recursive
+cd grounded-sam-osx && bash install.sh
+
+pip install opencv-python pycocotools matplotlib onnxruntime onnx ipykernel
+pip install accelerate
+
+# Install diffusers in gligen fork to enable gligen pipeline:
+git clone https://github.com/gligen/diffusers.git
+cd diffusers
+pip install -e .
+
 
 
 ## Huggingface Dataset
