@@ -30,7 +30,8 @@ conda env update dream_edit --file environment.yml  --prune
 > * [Gligen's fork of diffuser](https://github.com/gligen/diffusers)
 
 For example, besides the auto install environment, we also install dependencies with:
-```pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
+```
+pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
 cd ..
 
 # Install SAM
@@ -57,6 +58,7 @@ pip install accelerate
 git clone https://github.com/gligen/diffusers.git
 cd diffusers
 pip install -e .
+```
 
 
 
