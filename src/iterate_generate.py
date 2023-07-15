@@ -429,6 +429,8 @@ def replacement(
         inpainted_img = Image.fromarray(np.uint8(inpainted_img))
         save_pil_image(pil_image=inpainted_img, dest_folder="tmp", filename=tmp_img_name, filetype="jpg")
         intermediate_images.append(inpainted_img)
+    else:
+        save_pil_image(pil_image=src_img, dest_folder="tmp", filename=tmp_img_name, filetype="jpg")
 
     img_edited, intermediate_images_edited, generated_image_list = iterative_edit(
         src_img_path=src_img_path,
