@@ -82,6 +82,7 @@ sh replace_dog8_config_01.sh
 You can change the input path for data, model, and other parameter setting in the corresponding config file (e.g. replace_dog8_config_01.yaml)
 An example fine-tuned dreambooth model checkpoint for dog8 can be downloaded at [here](https://drive.google.com/file/d/1aSyA6CsCchYC1l9DxJiy0CrJsht0K0sj/view?usp=sharing).
 
+All the other subject fine-tuned model weights can be downloaded at [this link](https://vault.cs.uwaterloo.ca/s/EiNjg9yTAKEFgF2).
 
 
 ## BibTeX
