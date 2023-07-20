@@ -10,7 +10,7 @@ Models, code, and dataset for [DreamEdit: Subject-driven Image Editing](https://
 Check [project website](https://dreameditbenchteam.github.io/) for demos and data examples.
 
 ## News
-* [19/07/2023] We released our DreamBooth weights on [https://vault.cs.uwaterloo.ca/s/EiNjg9yTAKEFgF2](https://vault.cs.uwaterloo.ca/s/EiNjg9yTAKEFgF2).
+* [20/07/2023] We released our DreamBooth weights on [UWaterloo Vault](https://vault.cs.uwaterloo.ca/s/EiNjg9yTAKEFgF2) and [HuggingFace Space](https://huggingface.co/vinesmsuic/DreamEdit-DreamBooth-Models/tree/main).
 
 ## Requirements
 A suitable conda environment named `dream_edit` can be created and activated with:
