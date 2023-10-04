@@ -65,7 +65,7 @@ pip install -e .
 
 
 ## Huggingface Dataset
-Our dataset is on Huggingface now: https://huggingface.co/datasets/tianleliphoebe/DreamEditBench
+Our dataset is on Huggingface now: https://huggingface.co/datasets/tianleliphoebe/DreamEditBench, a more self-contained one: https://huggingface.co/datasets/tianleliphoebe/DreamEditBench_SelfContained.
 ```python
 from datasets import load_dataset
 dataset = load_dataset("tianleliphoebe/DreamEditBench")
