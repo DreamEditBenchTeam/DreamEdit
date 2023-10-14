@@ -100,3 +100,7 @@ If you find this paper or repo useful for your research, please consider citing 
       primaryClass={cs.CV}
 }
 ```
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=DreamEditBenchTeam/DreamEdit&type=Date)](https://star-history.com/#DreamEditBenchTeam/DreamEdit&Date)
