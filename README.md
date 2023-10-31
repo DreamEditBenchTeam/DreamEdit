@@ -15,7 +15,7 @@ Check [project website](https://dreameditbenchteam.github.io/) for demos and dat
 ## Requirements
 A suitable conda environment named `dream_edit` can be created and activated with:
 
-```shell
+```bash
 conda env create -f environment.yml
 conda activate dream_edit
 
@@ -32,7 +32,7 @@ conda env update dream_edit --file environment.yml  --prune
 > * [Gligen's fork of diffuser](https://github.com/gligen/diffusers)
 
 For example, besides the auto install environment, we also install dependencies with:
-```
+```bash
 pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
 cd ..
 
@@ -73,12 +73,12 @@ dataset = load_dataset("tianleliphoebe/DreamEditBench")
 
 ## How to run
 Go to `experiment-results-analysis` folder:
-```
+```bash
 cd experiment-results-analysis/experiments
 ```
 
 Run the script:
-```
+```bash
 sh replace_dog8_config_01.sh
 ```
 You can change the input path for data, model, and other parameter setting in the corresponding config file (e.g. replace_dog8_config_01.yaml).  The ```data: src_img_data_folder_path``` should be specified as the path to our DreamEditBench dataset can be downloaded as mentioned above. And the ```db_dataset_path``` should be the path of the original dreambooth dataset that can be downloaded here: https://github.com/google/dreambooth/tree/main/dataset.
@@ -90,7 +90,7 @@ All the other subject fine-tuned model weights can be downloaded at [this link](
 ## BibTeX
 
 If you find this paper or repo useful for your research, please consider citing our paper:
-```
+```bibtex
 @misc{li2023dreamedit,
       title={DreamEdit: Subject-driven Image Editing}, 
       author={Tianle Li and Max Ku and Cong Wei and Wenhu Chen},
