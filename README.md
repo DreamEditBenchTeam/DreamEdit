@@ -10,6 +10,7 @@ Models, code, and dataset for [DreamEdit: Subject-driven Image Editing](https://
 Check [project website](https://dreameditbenchteam.github.io/) for demos and data examples.
 
 ## News
+* [26/10/2023] Paper accepted to [TMLR 2023](https://jmlr.org/tmlr/). 
 * [20/07/2023] We released our DreamBooth weights on [UWaterloo Vault](https://vault.cs.uwaterloo.ca/s/EiNjg9yTAKEFgF2) and [HuggingFace Space](https://huggingface.co/ImagenHub/DreamEdit-DreamBooth-Models).
 
 ## Requirements
